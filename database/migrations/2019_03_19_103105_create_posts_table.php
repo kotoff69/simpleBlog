@@ -24,6 +24,9 @@ class CreatePostsTable extends Migration
                 ->collation('utf8mb4_unicode_ci')
                 ->comment('Post name');
             $table->timestamps();
+
+            $table->index('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade');
         });
     }
 

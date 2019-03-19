@@ -42,6 +42,11 @@ class CreatePostsCommentsTable extends Migration
                 ->references('id')
                 ->on('posts_comments')
                 ->onUpdate('cascade');
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade');
         });
     }
 

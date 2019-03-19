@@ -23,7 +23,6 @@ class CreatePostsTagsTable extends Migration
                 ->charset('utf8mb4')
                 ->collation('utf8mb4_unicode_ci')
                 ->comment('Tag');
-            $table->timestamps();
 
             $table->index('tag');
             $table->index('post_id');

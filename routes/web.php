@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::prefix('posts')->group(function () {
+        Route::get('/', 'PostController@index');
+        Route::get('/{id}', 'PostController@show');
+});
